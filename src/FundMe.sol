@@ -104,4 +104,8 @@ contract FundMe {
     function getOwner() external view returns (address) {
         return i_owner;
     }
+
+    function getPriceFeed() public view returns (AggregatorV3Interface) {
+        return s_priceFeed;
+    }
 }

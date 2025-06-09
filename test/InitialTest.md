@@ -20,6 +20,10 @@ contract FundeMeTest is Test{
         assertEq(fundMe.MINIMUM_USD(), 5e18);
     }
 
+    function testOwnerIsMsgSender() public {
+        assertEq(fundMe.i_owner(), address(this));
+    }
+
     function testGetVersion() public view {
         uint256 version = fundMe.getVersion();
         console.log(version);
@@ -30,3 +34,6 @@ contract FundeMeTest is Test{
     }    
 
 }
+
+# $ forge test -vv --mt testGetVersion --fork-url $SEPOLIA
+for testGetVersion  
